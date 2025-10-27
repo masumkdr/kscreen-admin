@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Synchronous ICT",
+    "email": "info@synchronousict.com",
+    "phone": "+8801710000001",
+    "address": "457/A, Bashundhara R/A, Dhaka",
+    "industry": "Software",
+    "established": "2015-03-12"
+  },
+  {
+    "id": 2,
+    "name": "K-SCREEN Cinemas",
+    "email": "hello@kscreen.com",
+    "phone": "+8801710000002",
+    "address": "Plot 8, Road 8, Gulshan 1, Dhaka",
+    "industry": "Entertainment",
+    "established": "2019-10-05"
+  },
+  {
+    "id": 3,
+    "name": "Natiply Networks",
+    "email": "support@natiply.com",
+    "phone": "+971501234567",
+    "address": "Cluster I, JLT, Dubai, UAE",
+    "industry": "Telecommunications",
+    "established": "2020-06-17"
+  },
+  {
+    "id": 4,
+    "name": "Communexus DMCC",
+    "email": "info@communexus.ae",
+    "phone": "+971504567890",
+    "address": "DMCC Tower, Jumeirah Lakes Towers, Dubai",
+    "industry": "Finance",
+    "established": "2021-02-09"
+  },
+  {
+    "id": 5,
+    "name": "TechWave Solutions",
+    "email": "contact@techwave.com",
+    "phone": "+8801710000005",
+    "address": "House 10, Banani, Dhaka",
+    "industry": "Software",
+    "established": "2017-07-28"
+  },
+  {
+    "id": 6,
+    "name": "Skyline Media",
+    "email": "info@skylinemedia.com",
+    "phone": "+8801710000006",
+    "address": "Sector 11, Uttara, Dhaka",
+    "industry": "Marketing",
+    "established": "2018-04-03"
+  },
+  {
+    "id": 7,
+    "name": "CloudHive Technologies",
+    "email": "contact@cloudhive.io",
+    "phone": "+8801710000007",
+    "address": "House 22, Niketan, Gulshan, Dhaka",
+    "industry": "Cloud Services",
+    "established": "2016-12-22"
+  },
+  {
+    "id": 8,
+    "name": "EduNation BD",
+    "email": "admin@edunationbd.com",
+    "phone": "+8801710000008",
+    "address": "Mirpur DOHS, Dhaka",
+    "industry": "Education",
+    "established": "2014-05-14"
+  },
+  {
+    "id": 9,
+    "name": "GreenTrade Global",
+    "email": "sales@greentrade.com",
+    "phone": "+971505678123",
+    "address": "Business Bay, Dubai",
+    "industry": "Trading",
+    "established": "2018-11-02"
+  },
+  {
+    "id": 10,
+    "name": "MotionPix Studios",
+    "email": "info@motionpix.com",
+    "phone": "+8801710000010",
+    "address": "Banani 11, Dhaka",
+    "industry": "Film Production",
+    "established": "2022-08-18"
+  }
+]

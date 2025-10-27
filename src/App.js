@@ -9,6 +9,7 @@ import Theaters from "./pages/Theaters";
 import Bookings from "./pages/Bookings";
 import Users from "./pages/Users";
 import Settings from "./pages/Settings";
+import Organizations from "./pages/Organizations";
 
 export default function App() {
   const location = useLocation();
@@ -34,6 +35,19 @@ export default function App() {
                 exit="exit"
               >
                 <Dashboard />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/organizations"
+            element={
+              <motion.div
+                variants={pageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+              >
+                <Organizations />
               </motion.div>
             }
           />

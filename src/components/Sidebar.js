@@ -15,6 +15,7 @@ import TheaterComedyIcon from "@mui/icons-material/TheaterComedy";
 import EventSeatIcon from "@mui/icons-material/EventSeat";
 import PeopleIcon from "@mui/icons-material/People";
 import SettingsIcon from "@mui/icons-material/Settings";
+import BusinessIcon from '@mui/icons-material/Business';
 import { useTheme } from "@mui/material/styles";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -23,6 +24,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 // =====================
 const menuItems = [
   { text: "Dashboard", icon: <DashboardIcon />, path: "/" },
+  { text: "Organizations", icon: <BusinessIcon />, path: "/organizations" },
   { text: "Movies", icon: <MovieIcon />, path: "/movies" },
   { text: "Theaters", icon: <TheaterComedyIcon />, path: "/theaters" },
   { text: "Bookings", icon: <EventSeatIcon />, path: "/bookings" },
