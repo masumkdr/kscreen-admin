@@ -1,0 +1,20 @@
+/* NProgress base styles */
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: linear-gradient(90deg, #c6a049 0%, #d4af37 100%);
+  position: fixed;
+  z-index: 3000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  transition: all 0.2s ease;
+}
+
+/* Optional spinner (disabled by default) */
+#nprogress .peg {
+  display: none;
+}
