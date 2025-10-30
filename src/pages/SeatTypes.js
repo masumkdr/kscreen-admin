@@ -2,41 +2,41 @@ import React, { useState, useEffect } from 'react';
 import TableView from '../components/TableView/TableView';
 import DialogForm from '../components/DialogForm';
 import FormBuilder from '../components/FormBuilder/FormBuilder';
-import locationData from '../data/locations.json';
 import { useSnackbarMessage } from '../hooks/useSnackbarMessage';
+import seatTypeData from '../data/seat_types.json';
 
-const Locations = () => {
-  const [data, setData] = useState(locationData);
+const SeatTypes = () => {
+  const [data, setData] = useState([]);
   const [formOpen, setFormOpen] = useState(false);
   const [editItem, setEditItem] = useState(null);
   const [formValues, setFormValues] = useState({});
   const { SnackbarComponent, showMessage } = useSnackbarMessage();
 
-  // Load from localStorage or JSON
-useEffect(() => {
-  const stored = localStorage.getItem('locations_data');
-  if (stored && stored !== 'undefined') {
-    setData(JSON.parse(stored));
-  } else {
-    setData(locationData);
-    localStorage.setItem('locations_data', JSON.stringify(locationData));
-  }
-}, []);
-
-
-  // Save to localStorage on every change
+  // 🧭 Load from localStorage or JSON
   useEffect(() => {
-    localStorage.setItem('locations_data', JSON.stringify(data));
+    const stored = localStorage.getItem('seat_types_data');
+    if (stored && stored !== 'undefined') {
+      setData(JSON.parse(stored));
+    } else {
+      setData(seatTypeData);
+      localStorage.setItem('seat_types_data', JSON.stringify(seatTypeData));
+    }
+  }, []);
+
+  // 💾 Save changes persistently
+  useEffect(() => {
+    if (data.length > 0) {
+      localStorage.setItem('seat_types_data', JSON.stringify(data));
+    }
   }, [data]);
 
-  // Form field configuration
+  // 🧾 Form Fields
   const fields = [
-    { name: 'name', label: 'Location Name', type: 'text' },
-    { name: 'address', label: 'Address', type: 'text' },
-    { name: 'status', label: 'Status', type: 'dropdown', options: ['Active', 'Inactive'] }
+    { name: 'name', label: 'Seat Type Name', type: 'text' },
+    { name: 'description', label: 'Description', type: 'text' }
   ];
 
-  // CRUD handlers
+  // 🧠 CRUD Handlers
   const openForm = () => {
     setEditItem(null);
     setFormValues({});
@@ -50,9 +50,9 @@ useEffect(() => {
   };
 
   const handleDelete = (row) => {
-    if (window.confirm(`Delete location "${row.name}"?`)) {
+    if (window.confirm(`Delete seat type "${row.name}"?`)) {
       setData(prev => prev.filter(d => d.id !== row.id));
-      showMessage('info', 'Location deleted successfully');
+      showMessage('info', 'Seat type deleted successfully');
     }
   };
 
@@ -61,10 +61,10 @@ useEffect(() => {
 
     if (editItem) {
       setData(prev => prev.map(d => (d.id === editItem.id ? formValues : d)));
-      showMessage('success', 'Location updated successfully');
+      showMessage('success', 'Seat type updated successfully');
     } else {
       setData(prev => [...prev, { id: Date.now(), ...formValues }]);
-      showMessage('success', 'Location added successfully');
+      showMessage('success', 'Seat type added successfully');
     }
 
     setFormOpen(false);
@@ -74,11 +74,10 @@ useEffect(() => {
   return (
     <>
       <TableView
-        title="Locations"
+        title="Seat Types"
         columns={[
           { field: 'name', title: 'Name', isPrimary: true },
-          { field: 'address', title: 'Address' },
-          { field: 'status', title: 'Status' }
+          { field: 'description', title: 'Description' },
         ]}
         data={data}
         defaultSortField="name"
@@ -96,7 +95,7 @@ useEffect(() => {
         open={formOpen}
         onClose={() => setFormOpen(false)}
         onSave={handleSave}
-        title={editItem ? 'Edit Location' : 'Add Location'}
+        title={editItem ? 'Edit Seat Type' : 'Add Seat Type'}
       >
         <FormBuilder
           fields={fields}
@@ -109,9 +108,10 @@ useEffect(() => {
           }
         />
       </DialogForm>
-	  {SnackbarComponent}
+
+      {SnackbarComponent}
     </>
   );
 };
 
-export default Locations;
+export default SeatTypes;

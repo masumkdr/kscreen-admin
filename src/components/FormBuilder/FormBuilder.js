@@ -6,13 +6,12 @@ const FormBuilder = ({ fields, values, onChange }) => {
     <>
       {fields.map((field) => {
         const commonProps = {
-          key: field.name,
-          name: field.name,
-          label: field.label,
-          value: values[field.name] || '',
-          onChange: onChange,
-          fullWidth: true
-        };
+			name: field.name,
+			label: field.label,
+			value: values[field.name] || '',
+			onChange,
+			fullWidth: true
+		};
 
         switch (field.type) {
           case 'text':
@@ -20,9 +19,12 @@ const FormBuilder = ({ fields, values, onChange }) => {
           case 'dropdown':
             return (
               <TextField {...commonProps} select>
-                {field.options.map((opt) => (
-                  <MenuItem key={opt} value={opt}>{opt}</MenuItem>
-                ))}
+               {field.options.map((opt) => {
+					const value = typeof opt === 'object' ? opt.value : opt;
+					const label = typeof opt === 'object' ? opt.label : opt;
+					return <MenuItem key={value} value={value}>{label}</MenuItem>;
+				})}
+
               </TextField>
             );
           case 'radio':

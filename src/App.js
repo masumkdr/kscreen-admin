@@ -11,6 +11,8 @@ import Users from "./pages/Users";
 import Settings from "./pages/Settings";
 import Organizations from "./pages/Organizations";
 import Locations from "./pages/Locations";
+import Halls from "./pages/Halls";
+import SeatTypes from "./pages/SeatTypes";
 
 export default function App() {
   const location = useLocation();
@@ -65,6 +67,45 @@ export default function App() {
               </motion.div>
             }
           />
+           <Route
+            path="/theaters"
+            element={
+              <motion.div
+                variants={pageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+              >
+                <Theaters />
+              </motion.div>
+            }
+          />
+              <Route
+            path="/seat_types"
+            element={
+              <motion.div
+                variants={pageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+              >
+                <SeatTypes />
+              </motion.div>
+            }
+          />
+           <Route
+            path="/halls"
+            element={
+              <motion.div
+                variants={pageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+              >
+                <Halls />
+              </motion.div>
+            }
+          />
           <Route
             path="/movies"
             element={
@@ -75,19 +116,6 @@ export default function App() {
                 exit="exit"
               >
                 <Movies />
-              </motion.div>
-            }
-          />
-          <Route
-            path="/theaters"
-            element={
-              <motion.div
-                variants={pageVariants}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-              >
-                <Theaters />
               </motion.div>
             }
           />

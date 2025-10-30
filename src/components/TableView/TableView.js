@@ -220,9 +220,23 @@ const TableView = ({
             .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
             .map((row) => (
               <TableRow key={row.id} hover>
-                {columns.map(col => (
-                  <TableCell key={col.field}>{row[col.field]}</TableCell>
-                ))}
+               {columns.map(col => {
+                    const cellValue = col.render ? col.render(row) : row[col.field];
+                    const isPrimary = col.isPrimary;
+
+                    return (
+                      <TableCell
+                        key={col.field}
+                        sx={{
+                          fontWeight: isPrimary ? 'bold' : 'normal',
+                          color: isPrimary ? '#bfa14a' : 'inherit', // 🎨 golden
+                          fontSize: isPrimary ? '0.95rem' : '0.9rem'
+                        }}
+                      >
+                        {cellValue}
+                      </TableCell>
+                    );
+                  })}
                 <TableCell align="center">
                   <Tooltip title="Edit">
                     <IconButton color="primary" size="small" onClick={() => onEdit(row)}>

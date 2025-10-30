@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Hall 1",
+    "theater_id": 1,
+    "capacity": 120,
+    "status": "Active"
+  },
+  {
+    "id": 2,
+    "name": "Hall 2",
+    "theater_id": 1,
+    "capacity": 150,
+    "status": "Active"
+  },
+  {
+    "id": 3,
+    "name": "VIP Lounge",
+    "theater_id": 2,
+    "capacity": 80,
+    "status": "Inactive"
+  },
+  {
+    "id": 4,
+    "name": "Hall 3",
+    "theater_id": 3,
+    "capacity": 100,
+    "status": "Active"
+  },
+  {
+    "id": 5,
+    "name": "Silver Room",
+    "theater_id": 4,
+    "capacity": 90,
+    "status": "Active"
+  }
+]

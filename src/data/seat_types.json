@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "Regular",
+    "description": "Standard seating with comfortable cushions and good viewing angles."
+  },
+  {
+    "id": 2,
+    "name": "VIP",
+    "description": "Premium seats with extra legroom, priority service and reclining options."
+  },
+  {
+    "id": 3,
+    "name": "Couple",
+    "description": "Two-person sofa seats for couples with shared armrest and more privacy."
+  },
+  {
+    "id": 4,
+    "name": "Deluxe",
+    "description": "High-end leather seating with tray tables and private lighting."
+  },
+  {
+    "id": 5,
+    "name": "Balcony",
+    "description": "Raised section seats providing the best overall theater view."
+  }
+]
