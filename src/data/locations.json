@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Kscell Star, Pathapath, Dhaka",
+    "address": "H#303, Road#04, Pathapath, Dhaka",
+    "status": "Active"
+  },
+  {
+    "id": 2,
+    "name": "Kscell Prime, Khulna",
+    "address": "House 12, Road 5, Khalishpur, Khulna",
+    "status": "Active"
+  },
+  {
+    "id": 3,
+    "name": "Kscell City, Sylhet",
+    "address": "Plot 22, Shahjalal Uposhohor, Sylhet",
+    "status": "Inactive"
+  },
+  {
+    "id": 4,
+    "name": "Kscell Plaza, Comilla",
+    "address": "House 7, Kandirpar, Comilla",
+    "status": "Active"
+  },
+  {
+    "id": 5,
+    "name": "Kscell Point, Faridpur",
+    "address": "Road 8, Goalchamot, Faridpur",
+    "status": "Active"
+  },
+  {
+    "id": 6,
+    "name": "Kscell Hub, Barishal",
+    "address": "House 3, Nathullabad, Barishal",
+    "status": "Inactive"
+  },
+  {
+    "id": 7,
+    "name": "Kscell Arena, Dhaka",
+    "address": "House 10, Banani, Dhaka",
+    "status": "Active"
+  },
+  {
+    "id": 8,
+    "name": "Kscell Tower, Khulna",
+    "address": "Plot 33, Rupsha, Khulna",
+    "status": "Active"
+  }
+]

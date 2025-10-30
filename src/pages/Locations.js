@@ -1,25 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TableView from '../components/TableView/TableView';
 import DialogForm from '../components/DialogForm';
 import FormBuilder from '../components/FormBuilder/FormBuilder';
-import orgData from '../data/organizations.json';
+import locationData from '../data/locations.json';
 
-const Organizations = () => {
-  const [data, setData] = useState(orgData);
+const Locations = () => {
+  const [data, setData] = useState([]);
   const [formOpen, setFormOpen] = useState(false);
   const [editItem, setEditItem] = useState(null);
   const [formValues, setFormValues] = useState({});
 
-  // === FORM FIELDS ===
+  // Load from localStorage or JSON
+useEffect(() => {
+  const stored = localStorage.getItem('locations_data');
+  if (stored && stored !== 'undefined') {
+    setData(JSON.parse(stored));
+  } else {
+    setData(locationData);
+    localStorage.setItem('locations_data', JSON.stringify(locationData));
+  }
+}, []);
+
+
+  // Save to localStorage on every change
+  useEffect(() => {
+    localStorage.setItem('locations_data', JSON.stringify(data));
+  }, [data]);
+
+  // Form field configuration
   const fields = [
-    { name: 'name', label: 'Organization Name', type: 'text' },
-    { name: 'email', label: 'Email', type: 'text' },
-    { name: 'phone', label: 'Phone', type: 'text' },
-    { name: 'industry', label: 'Industry', type: 'dropdown', options: ['Software', 'Entertainment', 'Finance', 'Education', 'Telecom'] },
-    { name: 'established', label: 'Established Date', type: 'date' }
+    { name: 'name', label: 'Location Name', type: 'text' },
+    { name: 'address', label: 'Address', type: 'text' },
+    { name: 'status', label: 'Status', type: 'dropdown', options: ['Active', 'Inactive'] }
   ];
 
-  // === FUNCTIONS ===
+  // CRUD handlers
   const openForm = () => {
     setEditItem(null);
     setFormValues({});
@@ -33,7 +48,7 @@ const Organizations = () => {
   };
 
   const handleDelete = (row) => {
-    if (window.confirm(`Delete organization "${row.name}"?`)) {
+    if (window.confirm(`Delete location "${row.name}"?`)) {
       setData(prev => prev.filter(d => d.id !== row.id));
     }
   };
@@ -57,20 +72,13 @@ const Organizations = () => {
   return (
     <>
       <TableView
-        title="Organizations"
+        title="Locations"
         columns={[
           { field: 'name', title: 'Name' },
-          { field: 'email', title: 'Email' },
-          { field: 'phone', title: 'Phone' },
-          { field: 'industry', title: 'Industry' },
-          { field: 'established', title: 'Established At' },
+          { field: 'address', title: 'Address' },
+          { field: 'status', title: 'Status' }
         ]}
         data={data}
-        filters={[
-            { name: 'industry', label: 'Industry', type: 'dropdown', options: ['Software', 'Entertainment', 'Finance', 'Education', 'Telecom'] },
-            { name: 'established', label: 'Established', type: 'dateRange', field: 'established' },
-            { name: 'status', label: 'Status', type: 'dropdown', options: ['Active', 'Inactive', 'Pending'] },
-          ]}
         defaultSortField="name"
         defaultSortOrder="asc"
         defaultRowsPerPage={5}
@@ -86,7 +94,7 @@ const Organizations = () => {
         open={formOpen}
         onClose={() => setFormOpen(false)}
         onSave={handleSave}
-        title={editItem ? 'Edit Organization' : 'Add Organization'}
+        title={editItem ? 'Edit Location' : 'Add Location'}
       >
         <FormBuilder
           fields={fields}
@@ -103,4 +111,4 @@ const Organizations = () => {
   );
 };
 
-export default Organizations;
+export default Locations;

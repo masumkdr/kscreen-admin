@@ -10,6 +10,7 @@ import Bookings from "./pages/Bookings";
 import Users from "./pages/Users";
 import Settings from "./pages/Settings";
 import Organizations from "./pages/Organizations";
+import Locations from "./pages/Locations";
 
 export default function App() {
   const location = useLocation();
@@ -48,6 +49,19 @@ export default function App() {
                 exit="exit"
               >
                 <Organizations />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/locations"
+            element={
+              <motion.div
+                variants={pageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+              >
+                <Locations />
               </motion.div>
             }
           />
