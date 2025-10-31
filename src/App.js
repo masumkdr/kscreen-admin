@@ -6,13 +6,14 @@ import AdminLayout from "./layout/AdminLayout";
 import Dashboard from "./pages/Dashboard";
 import Movies from "./pages/Movies";
 import Theaters from "./pages/Theaters";
-import Bookings from "./pages/Bookings";
 import Users from "./pages/Users";
 import Settings from "./pages/Settings";
 import Organizations from "./pages/Organizations";
 import Locations from "./pages/Locations";
 import Halls from "./pages/Halls";
 import SeatTypes from "./pages/SeatTypes";
+import SeatLayouts from "./pages/SeatLayouts/SeatLayouts";
+import SeatLayoutBuilder from "./pages/SeatLayouts/SeatLayoutBuilder";
 
 export default function App() {
   const location = useLocation();
@@ -120,7 +121,7 @@ export default function App() {
             }
           />
           <Route
-            path="/bookings"
+            path="/seat_layouts"
             element={
               <motion.div
                 variants={pageVariants}
@@ -128,7 +129,33 @@ export default function App() {
                 animate="animate"
                 exit="exit"
               >
-                <Bookings />
+                <SeatLayouts />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/seat_layouts/new"
+            element={
+              <motion.div
+                variants={pageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+              >
+                <SeatLayoutBuilder />
+              </motion.div>
+            }
+          />
+           <Route
+            path="/seat_layouts/edit/:id"
+            element={
+              <motion.div
+                variants={pageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+              >
+                <SeatLayoutBuilder />
               </motion.div>
             }
           />

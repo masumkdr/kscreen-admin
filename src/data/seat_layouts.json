@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Standard Layout",
+    "total_rows": 8,
+    "total_columns": 10,
+    "status": "active"
+  },
+  {
+    "id": 2,
+    "name": "VIP Layout",
+    "total_rows": 5,
+    "total_columns": 8,
+    "status": "active"
+  },
+  {
+    "id": 3,
+    "name": "Couple Zone",
+    "total_rows": 6,
+    "total_columns": 9,
+    "status": "inactive"
+  }
+]

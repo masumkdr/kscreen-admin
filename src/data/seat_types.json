@@ -2,26 +2,31 @@
   {
     "id": 1,
     "name": "Regular",
-    "description": "Standard seating with comfortable cushions and good viewing angles."
+    "description": "Standard seating with comfortable cushions and good viewing angles.",
+    "color": "#4caf50"
   },
   {
     "id": 2,
     "name": "VIP",
-    "description": "Premium seats with extra legroom, priority service and reclining options."
+    "description": "Premium seats with extra legroom, priority service and reclining options.",
+    "color": "#fbc02d"
   },
   {
     "id": 3,
     "name": "Couple",
-    "description": "Two-person sofa seats for couples with shared armrest and more privacy."
+    "description": "Two-person sofa seats for couples with shared armrest and more privacy.",
+    "color": "#e91e63"
   },
   {
     "id": 4,
     "name": "Deluxe",
-    "description": "High-end leather seating with tray tables and private lighting."
+    "description": "High-end leather seating with tray tables and private lighting.",
+    "color": "#9c27b0"
   },
   {
     "id": 5,
     "name": "Balcony",
-    "description": "Raised section seats providing the best overall theater view."
+    "description": "Raised section seats providing the best overall theater view.",
+    "color": "#2196f3"
   }
 ]

@@ -5,6 +5,7 @@ import FormBuilder from '../components/FormBuilder/FormBuilder';
 import { useSnackbarMessage } from '../hooks/useSnackbarMessage';
 import hallData from '../data/halls.json';
 import theaterData from '../data/theaters.json';
+import seatLayoutsData from '../data/seat_layouts.json';
 
 const Halls = () => {
   const [data, setData] = useState([]);
@@ -32,6 +33,8 @@ const Halls = () => {
 
   // Quick lookup for theater names
   const theaterMap = Object.fromEntries(theaterData.map(t => [t.id, t.name]));
+  // Quick lookup for seat Layout names
+  const seatLayoutMap = Object.fromEntries(seatLayoutsData.map(t => [t.id, t.name]));
 
   // === Form fields ===
   const fields = [
@@ -41,6 +44,12 @@ const Halls = () => {
       label: 'Theater',
       type: 'dropdown',
       options: theaterData.map(t => ({ value: t.id, label: t.name }))
+    },
+    {
+      name: 'seat_layout_id',
+      label: 'Seat Layout',
+      type: 'dropdown',
+      options: seatLayoutsData.map(t => ({ value: t.id, label: t.name }))
     },
     { name: 'capacity', label: 'Capacity', type: 'text' },
     { name: 'status', label: 'Status', type: 'dropdown', options: ['Active', 'Inactive'] }
@@ -91,6 +100,11 @@ const Halls = () => {
             field: 'theater_id',
             title: 'Theater',
             render: (row) => theaterMap[row.theater_id] || 'N/A'
+          },
+           {
+            field: 'seat_layout_id',
+            title: 'Seat Layout',
+            render: (row) => seatLayoutMap[row.seat_layout_id] || 'N/A'
           },
           { field: 'capacity', title: 'Capacity' },
           { field: 'status', title: 'Status' },

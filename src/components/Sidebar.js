@@ -32,7 +32,7 @@ const menuItems = [
   { text: "Theaters", icon: <TheaterComedyIcon />, path: "/theaters" },
   { text: "Seat Types", icon: <ChairIcon />, path: "/seat_types" },
   { text: "Halls", icon: <TheatersIcon />, path: "/halls" },
-  { text: "Bookings", icon: <EventSeatIcon />, path: "/bookings" },
+  { text: "Seat layouts", icon: <EventSeatIcon />, path: "/seat_layouts" },
    { text: "Movies", icon: <MovieIcon />, path: "/movies" },
   { text: "Users", icon: <PeopleIcon />, path: "/users" },
   { text: "Settings", icon: <SettingsIcon />, path: "/settings" },

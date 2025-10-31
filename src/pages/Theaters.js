@@ -78,10 +78,10 @@ const Theaters = () => {
   };
 
   // 🧮 Helper: find location name by id
-  const getLocationName = (id) => {
-    const loc = locationData.find(l => l.id === Number(id));
-    return loc ? loc.name : 'N/A';
-  };
+  // const getLocationName = (id) => {
+  //   const loc = locationData.find(l => l.id === Number(id));
+  //   return loc ? loc.name : 'N/A';
+  // };
 
   return (
     <>
