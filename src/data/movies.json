@@ -1,0 +1,21 @@
+[
+  {
+    "id": 1,
+    "name": "Avatar: The Way of Water",
+    "category_id": [2, 3],
+    "origin_id": [3],
+    "language_id": [2],
+    "genre_id": [1, 5],
+    "actors": "Sam Worthington, Zoe Saldana",
+    "director": "James Cameron",
+    "release": "2022-12-16",
+    "runtime": "192",
+    "rating": "8.0",
+    "synopsis": "Jake Sully lives with his family on Pandora. When a familiar threat returns, he must fight to protect their home.",
+    "poster_url": "https://example.com/avatar-poster.jpg",
+    "trailer_url": "https://www.youtube.com/watch?v=d9MyW72ELq0",
+    "status": "now showing",
+    "created_at": "2025-10-31",
+    "updated_at": "2025-10-31"
+  }
+]

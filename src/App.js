@@ -14,6 +14,13 @@ import Halls from "./pages/Halls";
 import SeatTypes from "./pages/SeatTypes";
 import SeatLayouts from "./pages/SeatLayouts/SeatLayouts";
 import SeatLayoutBuilder from "./pages/SeatLayouts/SeatLayoutBuilder";
+import Categories from "./pages/Categories";
+import Origins from "./pages/Origins";
+import Languages from "./pages/Languages";
+import Genres from "./pages/Genres";
+import MovieDetails from "./pages/MoviesComponent/MovieDetails";
+import ShowtimeManager from "./pages/ShowTimeManager";
+import TimeSlots from "./pages/TimeSlots";
 
 export default function App() {
   const location = useLocation();
@@ -108,19 +115,6 @@ export default function App() {
             }
           />
           <Route
-            path="/movies"
-            element={
-              <motion.div
-                variants={pageVariants}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-              >
-                <Movies />
-              </motion.div>
-            }
-          />
-          <Route
             path="/seat_layouts"
             element={
               <motion.div
@@ -156,6 +150,110 @@ export default function App() {
                 exit="exit"
               >
                 <SeatLayoutBuilder />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/categories"
+            element={
+              <motion.div
+                variants={pageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+              >
+                <Categories />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/origins"
+            element={
+              <motion.div
+                variants={pageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+              >
+                <Origins />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/languages"
+            element={
+              <motion.div
+                variants={pageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+              >
+                <Languages />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/genres"
+            element={
+              <motion.div
+                variants={pageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+              >
+                <Genres />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/timeslots"
+            element={
+              <motion.div
+                variants={pageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+              >
+                <TimeSlots />
+              </motion.div>
+            }
+          />
+            <Route
+            path="/movies"
+            element={
+              <motion.div
+                variants={pageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+              >
+                <Movies />
+              </motion.div>
+            }
+          />
+            <Route
+            path="/movie/:id"
+            element={
+              <motion.div
+                variants={pageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+              >
+                <MovieDetails />
+              </motion.div>
+            }
+          />
+            <Route
+            path="/showtimes"
+            element={
+              <motion.div
+                variants={pageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+              >
+                <ShowtimeManager />
               </motion.div>
             }
           />
