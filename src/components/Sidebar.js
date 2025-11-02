@@ -29,6 +29,7 @@ import {
   Schedule as ScheduleIcon,
   ExpandLess,
   ExpandMore,
+  AirplaneTicket as AirplaneTicketIcon,
 } from "@mui/icons-material";
 
 import { useTheme } from "@mui/material/styles";
@@ -115,7 +116,6 @@ export default function Sidebar({ mobileOpen, handleDrawerToggle, drawerWidth })
         { text: "Genres", icon: <MovieFilterIcon />, path: "/genres" },
         { text: "Time Slots", icon: <ScheduleIcon />, path: "/timeslots" },
         { text: "Movies", icon: <MovieIcon />, path: "/movies" },
-        { text: "Show Times", icon: <ScheduleIcon />, path: "/showtimes" },
       ],
     },
     {
@@ -125,6 +125,15 @@ export default function Sidebar({ mobileOpen, handleDrawerToggle, drawerWidth })
       items: [
         { text: "Food Courts", icon: <RestaurantIcon />, path: "/food_courts" },
         { text: "Coupons", icon: <LocalOfferIcon />, path: "/coupons" },
+      ],
+    },
+      {
+      key: "counter",
+      title: "Counter",
+      icon: <LocalOfferIcon />,
+      items: [
+        { text: "Sale Tickets", icon: <AirplaneTicketIcon />, path: "/counter_pos" },
+        { text: "Sale Coupons", icon: <LocalOfferIcon />, path: "/sale_coupons" },
       ],
     },
     {

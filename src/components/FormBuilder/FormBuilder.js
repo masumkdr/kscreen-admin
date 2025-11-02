@@ -25,6 +25,7 @@ export default function FormBuilder({ fields, values = {}, onChange }) {
 
   // ✅ Simplified local helper for field value change
   const handleFieldChange = (name, value) => {
+     if (!name) return console.warn("Missing field name for change event");
     onChange(name, value);
   };
 

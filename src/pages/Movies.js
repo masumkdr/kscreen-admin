@@ -289,7 +289,7 @@ export default function Movies() {
           onChange={(name, value) =>
             setFormValues((prev) => ({
               ...prev,
-              [name]: value,
+              [name]: value
             }))
           }
         />

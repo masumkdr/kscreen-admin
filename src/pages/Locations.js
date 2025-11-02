@@ -101,11 +101,11 @@ useEffect(() => {
         <FormBuilder
           fields={fields}
           values={formValues}
-          onChange={(e) =>
-            setFormValues({
-              ...formValues,
-              [e.target.name]: e.target.value
-            })
+          onChange={(name, value) =>
+            setFormValues((prev) => ({
+              ...prev,
+              [name]: value
+            }))
           }
         />
       </DialogForm>

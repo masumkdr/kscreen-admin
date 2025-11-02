@@ -19,8 +19,8 @@ import Origins from "./pages/Origins";
 import Languages from "./pages/Languages";
 import Genres from "./pages/Genres";
 import MovieDetails from "./pages/MoviesComponent/MovieDetails";
-import ShowtimeManager from "./pages/ShowTimeManager";
 import TimeSlots from "./pages/TimeSlots";
+import CounterSalePOS from "./pages/CounterPos/CounterSalePos";
 
 export default function App() {
   const location = useLocation();
@@ -245,7 +245,7 @@ export default function App() {
             }
           />
             <Route
-            path="/showtimes"
+            path="/counter_pos"
             element={
               <motion.div
                 variants={pageVariants}
@@ -253,7 +253,7 @@ export default function App() {
                 animate="animate"
                 exit="exit"
               >
-                <ShowtimeManager />
+                <CounterSalePOS />
               </motion.div>
             }
           />
