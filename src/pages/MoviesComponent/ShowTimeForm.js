@@ -23,11 +23,11 @@ import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import hallsData from "../../data/halls.json";
 import timeSlots from "../../data/time_slots.json";
 import seatTypes from "../../data/seat_types.json";
+import theatersData from "../../data/theaters.json";
+import locationsData from "../../data/locations.json";
 
 export default function ShowTimeForm({ formData, onSave, onCancel }) {
   const [hallId, setHallId] = useState(formData?.hall_id || "");
-  const [startDate, setStartDate] = useState(formData?.date_range?.start || "");
-  const [endDate, setEndDate] = useState(formData?.date_range?.end || "");
   const [selectedSlots, setSelectedSlots] = useState([]);
   const [dates, setDates] = useState(formData?.dates || []);
   const [defaultPrices, setDefaultPrices] = useState({});
@@ -35,6 +35,17 @@ export default function ShowTimeForm({ formData, onSave, onCancel }) {
 
   const [openAddSlotDate, setOpenAddSlotDate] = useState(null);
   const [editingSlot, setEditingSlot] = useState(null);
+
+  const today = new Date();
+const nextWeek = new Date();
+nextWeek.setDate(today.getDate() + 7);
+
+const [startDate, setStartDate] = useState(
+  today.toISOString().split("T")[0]
+);
+const [endDate, setEndDate] = useState(
+  nextWeek.toISOString().split("T")[0]
+);
 
   const defaultPriceTemplate = {
     base: 150,
@@ -230,13 +241,19 @@ export default function ShowTimeForm({ formData, onSave, onCancel }) {
           label="Select Hall"
           value={hallId}
           onChange={(e) => setHallId(e.target.value)}
-          sx={darkFieldSx}
+          sx={{ ...darkFieldSx, minWidth: 240 }}
         >
-          {hallsData.map((h) => (
-            <MenuItem key={h.id} value={h.id}>
-              {h.name}
-            </MenuItem>
-          ))}
+          {hallsData.map((h) => {
+            const theater = theatersData.find((t) => t.id === h.theater_id);
+            const location = locationsData.find(
+              (l) => l.id === theater?.location_id
+            );
+            return (
+              <MenuItem key={h.id} value={h.id}>
+                {`${h.name} — ${theater?.name || "?"}, ${location?.name || "?"}`}
+              </MenuItem>
+            );
+          })}
         </TextField>
         <TextField
           label="Start Date"

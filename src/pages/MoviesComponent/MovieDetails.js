@@ -262,23 +262,7 @@ export default function MovieDetails() {
       <Divider sx={{ my: 4, borderColor: "#333" }} />
 
       <MovieShowtimes
-        movie={movie}
-        onShowtimesChange={(newShowtime) => {
-          const stored = JSON.parse(localStorage.getItem("movies_data")) || [];
-          const updated = stored.map((m) => {
-            if (m.id === movie.id) {
-              const updatedShowtimes = [...(m.showtimes || []), newShowtime];
-              return { ...m, showtimes: updatedShowtimes };
-            }
-            return m;
-          });
-
-          localStorage.setItem("movies_data", JSON.stringify(updated));
-          setMovie({
-            ...movie,
-            showtimes: [...(movie.showtimes || []), newShowtime],
-          });
-        }}
+       movie={{ id: movie.id, name: movie.name }}
       />
 
     </div>
